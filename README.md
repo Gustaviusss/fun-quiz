@@ -1,16 +1,7 @@
 # expense_control_app
 
-A new Flutter project.
+A Simple quiz app made as part of the Flutter & Dart - The Complete Guide [2023 Edition] by academind
 
-## Getting Started
+## Areas Covered in this example app
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+builders, ternary and conditional expressions, screen changes...
