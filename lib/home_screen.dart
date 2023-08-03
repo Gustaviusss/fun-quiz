@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen(this.startTrigger, {super.key});
@@ -19,14 +20,16 @@ class HomeScreen extends StatelessWidget {
               // colorBlendMode: BlendMode.modulate,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(20),
+          Padding(
+            padding: const EdgeInsets.all(20),
             child: Text(
               "Aprenda Flutter de um jeito divertido",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
+              style: GoogleFonts.redHatDisplay(
+                textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -38,15 +41,17 @@ class HomeScreen extends StatelessWidget {
                 Icons.arrow_right_alt,
                 color: Colors.white,
               ),
-              label: const Text(
+              label: Text(
                 'Começar',
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: GoogleFonts.redHatDisplay(
+                  textStyle: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ),
               style: OutlinedButton.styleFrom(
                   side:
                       const BorderSide(color: Color.fromRGBO(224, 214, 47, 88)),
                   padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 40)),
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 50)),
             ),
           )
         ],
