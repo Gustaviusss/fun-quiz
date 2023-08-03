@@ -11,36 +11,48 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+    setState(() {
+      currentQuestionIndex++;
+    });
+    print(currentQuestionIndex);
+  }
+
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            currentQuestion.question,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 18, fontStyle: FontStyle.italic),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          ...currentQuestion.answers.map((answer) => AnswerButton(
-                answerText: answer,
-                buttonTrigger: () {},
-              ))
-          // SizedBox(
-          //   height: 350,
-          //   width: 300,
-          //   child: ListView.builder(
-          //       itemCount: currentQuestion.answers.length,
-          //       itemBuilder: (_, index) =>
-          //           AnswerButton(answerText: currentQuestion.answers[index])),
-          // ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Text(
+                currentQuestion.question,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontStyle: FontStyle.italic),
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            ...currentQuestion
+                .getShuffledAnswers()
+                .map((answer) => AnswerButton(
+                      answerText: answer,
+                      buttonTrigger: answerQuestion,
+                    )),
+          ],
+        ),
       ),
     );
   }

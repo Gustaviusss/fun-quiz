@@ -43,7 +43,8 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
               style: OutlinedButton.styleFrom(
-                  side: const BorderSide(color: Colors.white),
+                  side:
+                      const BorderSide(color: Color.fromRGBO(224, 214, 47, 88)),
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 40)),
             ),
