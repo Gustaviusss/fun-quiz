@@ -29,13 +29,19 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void restartGame() {
+    setState(() {
+      activeScreen = HomeScreen(switchScreen);
+    });
+  }
+
   void chooseAnswer(String answer) {
-    if (selectedAnswers.length == questions.length - 1) {
+    selectedAnswers.add(answer);
+    if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultScreen(answers: selectedAnswers);
+        activeScreen =
+            ResultScreen(onRestart: restartGame, answers: selectedAnswers);
       });
-    } else {
-      selectedAnswers.add(answer);
     }
   }
 
