@@ -12,7 +12,7 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const subtitleStyle =
-        TextStyle(color: Colors.white, fontStyle: FontStyle.italic);
+        TextStyle(color: Colors.black, fontStyle: FontStyle.italic);
     var rightAnswers = 0;
     for (int i = 0; i < answers.length; i++) {
       if (answers[i] == questions[i].answers[0]) {
@@ -42,16 +42,16 @@ class ResultScreen extends StatelessWidget {
 
                     return Card(
                       elevation: 10,
-                      color: Colors.purple,
+                      color: isCorrect
+                          ? Colors.greenAccent.withOpacity(.8)
+                          : Colors.redAccent.withOpacity(.8),
                       child: ListTile(
                         style: ListTileStyle.list,
                         dense: false,
                         leading: CircleAvatar(
-                          backgroundColor:
-                              isCorrect ? Colors.green : Colors.red[300],
+                          backgroundColor: Colors.grey[850],
                           child: Text(
                             '${index + 1}',
-                            style: const TextStyle(color: Colors.white),
                           ),
                         ),
                         trailing: Icon(
@@ -64,10 +64,8 @@ class ResultScreen extends StatelessWidget {
                               color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                         subtitle: isCorrect
-                            ? Text(
-                                'Você Acertou, \'${answers[index]}\'',
-                                style: subtitleStyle,
-                              )
+                            ? Text('Você Acertou, \'${answers[index]}\'',
+                                style: subtitleStyle)
                             : Text(
                                 "Errado, a resposta certa é \'${questions[index].answers[0]}\'",
                                 style: subtitleStyle,

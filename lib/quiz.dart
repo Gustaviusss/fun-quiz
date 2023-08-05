@@ -31,6 +31,7 @@ class _QuizState extends State<Quiz> {
 
   void restartGame() {
     setState(() {
+      selectedAnswers.clear();
       activeScreen = HomeScreen(switchScreen);
     });
   }
