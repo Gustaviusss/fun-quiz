@@ -4,4 +4,4 @@ A Simple quiz app made as part of the Flutter & Dart - The Complete Guide [2023 
 
 ## Areas Covered in this example app
 
-builders, ternary and conditional expressions, screen update changes, spread operator, list manipulations,
+builders, ternary and conditional expressions, screen update changes, spread operator, list manipulations, Maps, and debugging technics
